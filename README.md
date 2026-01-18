@@ -1,16 +1,86 @@
-# React + Vite
+# diStreaming - React & Laravel Application
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+diStreaming adalah aplikasi web berbasis React yang terintegrasi dengan REST API Laravel. Aplikasi ini menyediakan fitur autentikasi pengguna, manajemen user, serta eksplorasi data movie sebagai fitur tambahan.
 
-Currently, two official plugins are available:
+Project ini dikembangkan untuk memenuhi kebutuhan **Assignment React & API Integration**.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
 
-## React Compiler
+##Technologies & Libraries
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+### Backend
+- Laravel 12
+- Laravel Sanctum (Authentication)
+- MySQL
+- REST API
 
-## Expanding the ESLint configuration
+### Frontend
+- React.js
+- React Router DOM
+- Axios
+- Tailwind CSS
+- Lucide React (Icons)
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+---
+
+## Authentication Features
+
+- Register user (successful & unsuccessful)
+- Login user (successful & unsuccessful)
+- Logout user
+- Token-based authentication menggunakan Laravel Sanctum
+- Protected Routes untuk halaman tertentu
+
+---
+
+## User Management (Main Assignment Feature)
+
+- Menampilkan daftar user dari API
+- Melihat detail user
+- Pagination pada daftar user
+- Endpoint API:
+  - `GET /api/users`
+  - `GET /api/users/{id}`
+
+Semua endpoint user dilindungi oleh authentication (Bearer Token).
+
+---
+
+## Movie Features (Additional Feature)
+
+Sebagai fitur tambahan di luar requirement utama:
+- Menampilkan daftar movie dari backend Laravel
+- Detail movie
+- Search movie berdasarkan judul
+- Integrasi thumbnail movie
+- Styling UI menyerupai platform streaming
+
+---
+
+## Pagination
+
+Pagination diimplementasikan menggunakan backend Laravel (`paginate()`) dan diterapkan pada halaman User List untuk memenuhi requirement pagination.
+
+---
+
+## Protected Routes
+
+Halaman berikut hanya dapat diakses oleh user yang sudah login:
+- Users List
+- User Detail
+
+Implementasi menggunakan komponen `ProtectedRoute`.
+
+---
+
+## Responsive Design
+
+Aplikasi dirancang responsive dan dapat diakses dengan baik pada:
+- Desktop
+- Tablet
+- Mobile
+
+---
+
+## 📂 Project Structure (Frontend)
+
